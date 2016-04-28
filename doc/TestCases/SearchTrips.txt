@@ -1,0 +1,95 @@
+The following is from the Trips test driver
+
+timeout_milliseconds : 120000
+res_system_url : http://cs509.cs.wpi.edu:8181/CS509.server/ReservationSystem
+timezone_url : http://api.geonames.org/timezone
+team_name : Team02
+min_layover_minutes : 60
+max_layover_minutes : 180
+max_hops : 3
+safe_search : 0
+confirm_timeout_seconds : 120
+debug_mode : 1
+
+Searching for flights from BOS to AUS departing on 2016_05_06...
+Potential: 302
+
+
+11 Flights Found in 2.836 seconds
+
+Displaying first 10 trips:
+BOS_AUS
+E2680   
+BOS -- AUS
+05/06/2016 21:19:00 -- 05/07/2016 00:21:00  duration: 04:01
+hops: 1  price: $148.00
+
+
+BOS_DEN_AUS
+E2650   E7711   
+BOS -- DEN -- AUS
+05/06/2016 05:14:00 -- 05/06/2016 11:15:00  duration: 07:01
+hops: 2  price: $110.76
+
+
+BOS_IAD_AUS
+E2671   E31816   
+BOS -- IAD -- AUS
+05/06/2016 15:35:00 -- 05/06/2016 20:41:00  duration: 06:06
+hops: 2  price: $163.68
+
+
+BOS_SAN_CVG_AUS
+E2657   E27405   E5207   
+BOS -- SAN -- CVG -- AUS
+05/06/2016 09:26:00 -- 05/07/2016 01:16:00  duration: 16:50
+hops: 3  price: $225.28
+
+
+BOS_SFO_CVG_AUS
+E2655   E28022   E5207   
+BOS -- SFO -- CVG -- AUS
+05/06/2016 08:42:00 -- 05/07/2016 01:16:00  duration: 17:34
+hops: 3  price: $226.01
+
+
+BOS_PDX_JFK_AUS
+E2660   E24216   E18513   
+BOS -- PDX -- JFK -- AUS
+05/06/2016 10:58:00 -- 05/07/2016 05:03:00  duration: 19:05
+hops: 3  price: $585.92
+
+
+BOS_BWI_LGA_AUS
+E2644   E2019   E19110   
+BOS -- BWI -- LGA -- AUS
+05/06/2016 02:03:00 -- 05/06/2016 11:01:00  duration: 09:58
+hops: 3  price: $82.66
+
+
+BOS_SAN_SJC_AUS
+E2654   E27400   E28644   
+BOS -- SAN -- SJC -- AUS
+05/06/2016 07:39:00 -- 05/06/2016 20:37:00  duration: 13:58
+hops: 3  price: $367.87
+
+
+BOS_IAD_SJC_AUS
+E2671   E31815   E28664   
+BOS -- IAD -- SJC -- AUS
+05/06/2016 15:35:00 -- 05/07/2016 04:33:00  duration: 13:58
+hops: 3  price: $208.87
+
+
+BOS_MSP_RDU_AUS
+E2664   E16605   E24854   
+BOS -- MSP -- RDU -- AUS
+05/06/2016 12:27:00 -- 05/06/2016 23:48:00  duration: 12:21
+hops: 3  price: $140.35
+
+
+Total Queries: 116
+Airport Queries: 1
+Flight Queries: 113
+Timezone Queries: 0
+11 Flights Found in 2.836 seconds

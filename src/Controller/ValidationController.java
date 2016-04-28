@@ -630,7 +630,7 @@ public class ValidationController {
 	public static void main(String[] args) throws IOException {
 		ValidationController.Instance().verbose = 3;
 		
-		//ServerInterface.ResetDB();
+		ServerInterface.ResetDB();
 		
 		DateTime d = new DateTime();
 		d.Set("2016 May 05 02:47 GMT","YYYY MMM DD hh:mm zzz");
@@ -655,7 +655,7 @@ public class ValidationController {
 		
 		System.out.println("Searching Returning Flights...");		
 		//then the returning trip
-		//Trips.LinkFlights("AUS", "BOS", r.getDateString(), true);
+		Trips.LinkFlights("AUS", "BOS", r.getDateString(), true);
 		
 		/*System.out.print(Trips.GetNumberofTrips() + " trips found\nEnter your selection and press enter: ");
 		br = new BufferedReader(new InputStreamReader(System.in));
@@ -666,8 +666,8 @@ public class ValidationController {
 		Trip returning = Trips.Get(Trips.GetNumberofTrips()-1);
 		
 		//merge the two trips into one for reservation
-		//Trip full_trip = Trips.MergeTrips(outbound, returning);
-		Trip full_trip = outbound;
+		Trip full_trip = Trips.MergeTrips(outbound, returning);
+		//Trip full_trip = outbound;
 		
 		//send out for booking and check if successful
 		boolean result = ValidationController.Instance().ConfirmTrip(full_trip);
@@ -675,7 +675,7 @@ public class ValidationController {
 		
 		System.out.println("\n\n>>> Beginning Stress Test <<<");
 		ValidationController.Instance().verbose = 1;
-		//ServerInterface.ResetDB();
+		ServerInterface.ResetDB();
 		System.out.println("Server Reset");
 		System.out.println("\nAttempting to overbook...");
 		for (int i = 0;i < 1000;i++)
@@ -687,7 +687,7 @@ public class ValidationController {
 			}
 		}
 		
-		//ServerInterface.ResetDB();
+		ServerInterface.ResetDB();
 	}
 
 }

@@ -1,0 +1,41 @@
+The following output is from the ValidationController test driver
+
+timeout_milliseconds : 120000
+res_system_url : http://cs509.cs.wpi.edu:8181/CS509.server/ReservationSystem
+timezone_url : http://api.geonames.org/timezone
+team_name : Team02
+min_layover_minutes : 60
+max_layover_minutes : 180
+max_hops : 3
+safe_search : 0
+confirm_timeout_seconds : 120
+debug_mode : 1
+Searching Departure Flights...
+
+Searching for flights from BOS to AUS departing on 2016_05_05...
+Potential: 305
+Searching Returning Flights...
+
+Searching for flights from AUS to BOS departing on 2016_05_10...
+Potential: 368
+Reserving flights:
+F2609
+F1597
+F14885
+F4773
+
+Generating XML...
+<Flights><Flight number="2609" seating="FirstClass"/><Flight number="1597" seating="FirstClass"/><Flight number="14885" seating="FirstClass"/><Flight number="4773" seating="FirstClass"/></Flights>
+
+Sending to Server...
+Server returned 200: OK
+
+
+>>> Beginning Stress Test <<<
+Server Reset
+
+Attempting to overbook...
+Server returned 200: OK
+Server returned 304: Not Modified
+
+Case Handled Successfully
