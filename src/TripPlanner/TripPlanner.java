@@ -79,6 +79,19 @@ public class TripPlanner
 	 */
 	public static void SearchFlights2(boolean firstclass)
 	{
+		trip = null;
+		trip1 = new ArrayList<Trip>();
+		trip2 = new ArrayList<Trip>();
+		trip3 = new ArrayList<Trip>();
+		tripmix1 = new ArrayList<Trip>();
+		tripmix2 = new ArrayList<Trip>();
+		triphop1 = new ArrayList<Trip>();
+		triphop2 = new ArrayList<Trip>();
+		tripfilter1 = null;
+		tripfilter2 = null;
+		tripsort1 = null;
+		tripsort2 = null;
+		
 		departure = getAirportCode(FlightsReservation.getDeparture()); // use
 																		// airport
 																		// code
@@ -158,6 +171,18 @@ public class TripPlanner
 	 */
 	public static void SearchFlights(boolean firstclass)
 	{
+		trip = null;
+		trip1 = new ArrayList<Trip>();
+		trip2 = new ArrayList<Trip>();
+		trip3 = new ArrayList<Trip>();
+		tripmix1 = new ArrayList<Trip>();
+		tripmix2 = new ArrayList<Trip>();
+		triphop1 = new ArrayList<Trip>();
+		triphop2 = new ArrayList<Trip>();
+		tripfilter1 = null;
+		tripfilter2 = null;
+		tripsort1 = null;
+		tripsort2 = null;
 		
 		departure = getAirportCode(FlightsReservation.getDeparture()); // use
 																		// airport
@@ -340,28 +365,14 @@ public class TripPlanner
 		{
 			for (int i = n - 1; i >= 0; i--)
 			{
-				int m = tripListOld.get(i).GetNumberofHops();
-				if (m == 1)
+				if (!tripListOld.get(i).ContainsMixedSeating())
 				{
-					continue;
-				}
-				if (m == 2)
-				{
-					if (tripListOld.get(i).ContainsMixedSeating() == true)
-					{
-						tripListOld.remove(i);
-					}
-				}
-				if (m == 3)
-				{
-					if (tripListOld.get(i).ContainsMixedSeating() == true)
-					{
-						tripListOld.remove(i);
-					}
+					//tripListOld.remove(i);
+					tripList.add(tripListOld.get(i));
 				}
 			}
 			
-			tripList = tripListOld;
+			//tripList = tripListOld;
 		}
 		
 		return tripList;

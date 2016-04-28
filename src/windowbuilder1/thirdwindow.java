@@ -147,6 +147,7 @@ public class thirdwindow
 		 * define non mix-seating button.
 		 */
 		JRadioButton rdbtnMixseating = new JRadioButton("non mix-seating");
+		buttonGroup_1.add(rdbtnMixseating);
 		/**
 		 * define all button
 		 */
@@ -352,7 +353,7 @@ public class thirdwindow
 			{
 				buttonGroup.clearSelection();
 				TripPlanner.triphop1.clear();
-				rdbtnAll.setSelected(true);
+				//rdbtnAll.setSelected(true);
 				if (rdbtnMixseating.isSelected() == true)
 				{
 					for (int i = 0; i < TripPlanner.tripmix1.size(); i++)

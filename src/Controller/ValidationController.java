@@ -630,7 +630,7 @@ public class ValidationController {
 	public static void main(String[] args) throws IOException {
 		ValidationController.Instance().verbose = 3;
 		
-		ServerInterface.ResetDB();
+		//ServerInterface.ResetDB();
 		
 		DateTime d = new DateTime();
 		d.Set("2016 May 05 02:47 GMT","YYYY MMM DD hh:mm zzz");
@@ -675,7 +675,7 @@ public class ValidationController {
 		
 		System.out.println("\n\n>>> Beginning Stress Test <<<");
 		ValidationController.Instance().verbose = 1;
-		ServerInterface.ResetDB();
+		//ServerInterface.ResetDB();
 		System.out.println("Server Reset");
 		System.out.println("\nAttempting to overbook...");
 		for (int i = 0;i < 1000;i++)
@@ -687,7 +687,7 @@ public class ValidationController {
 			}
 		}
 		
-		ServerInterface.ResetDB();
+		//ServerInterface.ResetDB();
 	}
 
 }

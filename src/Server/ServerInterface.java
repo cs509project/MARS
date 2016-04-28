@@ -121,7 +121,7 @@ public class ServerInterface {
 			connection.setConnectTimeout(timeout);
 			
 			connection.setDoOutput(true);
-			connection.setDoInput(true);
+			//connection.setDoInput(true);
 			
 			DataOutputStream writer = new DataOutputStream(connection.getOutputStream());
 			writer.writeBytes(action);
@@ -132,14 +132,14 @@ public class ServerInterface {
 			//System.out.println("\nSending 'POST'");
 			//System.out.println(("\nResponse Code : " + responseCode));
 			
-			BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			String line;
-			StringBuffer response = new StringBuffer();
+			//BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+			//String line;
+			//StringBuffer response = new StringBuffer();
 			
-			while ((line = in.readLine()) != null) {
-				response.append(line);
-			}
-			in.close();
+			//while ((line = in.readLine()) != null) {
+			//	response.append(line);
+			//}
+			//in.close();
 			
 			//System.out.println(response.toString());
 		}
@@ -147,6 +147,7 @@ public class ServerInterface {
 			if (responseCode == 0)
 				responseCode = 503;
 			//ex.printStackTrace();
+			System.out.println(action);
 			return "ERROR - " + responseCode;
 		}
 		
