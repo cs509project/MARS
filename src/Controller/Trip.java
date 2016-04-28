@@ -318,7 +318,8 @@ public class Trip {
 				+ "<br/> " + 
 				
 				GetDepartureTime() + " -- " + GetArrivalTime() + "  duration: " + TimeDifference() + "<br/>" +
-				"layovers: " + (num_hops-1) + "<br/>price: " + totalPrice.toString() + "<br/>" + 
+				(num_hops-1>0?("Layovers: " + (num_hops-1)):"Direct Flight") + 
+				"<br/>price: " + totalPrice.toString() + "<br/>" + 
 				(this.mixSeating==true?"* Your preferred seating is not available in all flights of this trip<br/> ":"")
 				+ "-----------------------------------------------------------------------------------------------------";
 		

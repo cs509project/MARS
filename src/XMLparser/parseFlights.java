@@ -39,7 +39,7 @@ public class parseFlights{
 			Element flight = (Element) flightIter.next();
 			Map Flight = new HashMap();
 			// get flight number
-			Flight.put("Flightnumber", Integer.parseInt(flight.attributeValue("Number")));
+			Flight.put("Flightnumber", flight.attributeValue("Number"));
 			// get airplane model
 			Flight.put("AirplaneModel", flight.attributeValue("Airplane"));
 			// get flight time

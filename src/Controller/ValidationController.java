@@ -14,6 +14,7 @@ import Server.ServerInterface;
 import Utility.DateTime;
 import Server.ServerConstants;
 import XMLparser.*;
+import windowbuilder1.FlightsReservation;
 
 public class ValidationController {
 	
@@ -22,7 +23,7 @@ public class ValidationController {
 	private int max_layover = ValidationConstants.MAX_LAYOVER_MINUTES;
 	private int max_hops = ValidationConstants.MAX_HOPS;
 	private int confirm_timeout = ValidationConstants.CONFIRMATION_TIMEOUT_SECONDS;
-	public int verbose = 0;
+	public int verbose = 3;
 	
 	private String last_error = "";
 	private int last_error_code = 0;
@@ -96,6 +97,7 @@ public class ValidationController {
 		max_layover = ValidationConstants.MAX_LAYOVER_MINUTES;
 		max_hops = ValidationConstants.MAX_HOPS;
 		safemode = ValidationConstants.SAFE_SEARCH;
+		FlightsReservation.isdebug = ValidationConstants.DEBUG_MODE;
 	}
 	
 	/**
@@ -173,6 +175,8 @@ public class ValidationController {
 	         				confirm_timeout = (Integer.parseInt(value.get(i))>=0?
 	         						Integer.parseInt(value.get(i)):ValidationConstants.CONFIRMATION_TIMEOUT_SECONDS);
 	         				break;
+	         			case 9:
+	         				FlightsReservation.isdebug = (value.get(i).compareTo("1")==0);
 	         			}
 	         		}
 	         	}

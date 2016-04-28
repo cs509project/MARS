@@ -11,6 +11,7 @@ public class ValidationConstants {
 	public static final int MAX_HOPS = 2;
 	public static final boolean SAFE_SEARCH = false;
 	public static final int CONFIRMATION_TIMEOUT_SECONDS = 120;
+	public static final boolean DEBUG_MODE = true;
 	
 	public static final String[] DEFAULT_LABEL = {
 			"res_system_url",
@@ -22,6 +23,7 @@ public class ValidationConstants {
 			"timeout_milliseconds",
 			"safe_search",
 			"confirm_timeout_seconds",
+			"debug_mode",
 			};
 	
 	public static final String TIMEZONE_CACHE_DIRECTORY = "resources//timezone.txt";
@@ -45,5 +47,6 @@ public class ValidationConstants {
 		RESPONSE_MESSAGE.put(500, "Internal Server Error");
 		RESPONSE_MESSAGE.put(502, "Bad Gateway");
 		RESPONSE_MESSAGE.put(503, "Service Unavailable");
+		RESPONSE_MESSAGE.put(700, "Unable to Acquire Lock");
 	}
 }

@@ -7,3 +7,4 @@ max_layover_minutes = 180
 max_hops = 3
 safe_search = 0
 confirm_timeout_seconds = 120
+debug_mode = 1

@@ -10,6 +10,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import Controller.ValidationController;
 import Utility.DateTime;
 
 /*************************************************************************
@@ -144,7 +146,7 @@ public class ServerInterface {
 		catch (Exception ex) {
 			if (responseCode == 0)
 				responseCode = 503;
-			ex.printStackTrace();
+			//ex.printStackTrace();
 			return "ERROR - " + responseCode;
 		}
 		
@@ -293,7 +295,16 @@ public class ServerInterface {
 		{
 			int response = Lock();
 			if (response != 200)
+			{
+				Unlock();
+				response = Lock();
+			}
+			
+			if (response != 200)
+			{
+				ValidationController.Instance().ReportError(700);
 				return response;
+			}
 			
 			response = ParseResponseCode(UpdateDatabase(QueryBuilder.GetReserveAction(team_name, xmlFlights)));
 			Unlock();
@@ -340,10 +351,10 @@ public class ServerInterface {
 		
 		
 		System.out.println("<<< TEST CASE 3: Get Departure Flight XML from Database >>>\n--");
-		String airport_code = "BOS";
+		String airport_code = "ATL";
 		DateTime t = new DateTime();
 		//t.SetDate(10, 5, 2016);
-		t.Set("2016_5_10", "YYYY_M_DD");
+		t.Set("2016_5_04", "YYYY_M_DD");
 		
 		System.out.println("Getting departure flights from "+airport_code+" on "+t.getDateString());
 		query = res_system_url + QueryBuilder.GetFlightQuery(team_name, airport_code, t.getDateString(), true);

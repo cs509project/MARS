@@ -9,6 +9,7 @@ package windowbuilder1;
 import TripPlanner.TripPlanner;
 import AirFlight.Airports;
 import Controller.ValidationController;
+import Server.ServerInterface;
 
 import org.dom4j.DocumentException;
 import javax.swing.JFrame;
@@ -28,7 +29,7 @@ import java.util.Calendar;
 
 public class FlightsReservation
 {
-	private static boolean isdebug = false;
+	public static boolean isdebug = false;
 	
 	public JFrame frmFlightsReservation;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
@@ -344,6 +345,24 @@ public class FlightsReservation
 		textArea.setBounds(392, 212, 252, 195);
 		if (FlightsReservation.isdebug)
 			frmFlightsReservation.getContentPane().add(textArea);
+		
+		
+		JButton btnReset = new JButton("ResetDB");
+		btnReset.setFont(new Font("Cambria", Font.BOLD | Font.ITALIC, 18));
+		btnReset.setBounds(260, 349, 93, 23);
+		if (FlightsReservation.isdebug)
+			frmFlightsReservation.getContentPane().add(btnReset);
+		
+		btnReset.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent event)
+			{
+				if (ServerInterface.ResetDB() == 200)
+					JOptionPane.showMessageDialog(null, "Database Reset");
+				else
+					JOptionPane.showMessageDialog(null, "Error Occurred - Databse Not Reset");
+			}
+		});
 		
 		/**
 		 * define search button

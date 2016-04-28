@@ -36,7 +36,7 @@ public class Flights {
 	}
 	
 	public Flights(String airport_code, DateTime date)
-	{
+	{	
 		List<Map> raw_departure = null;
 		List<Map> raw_departure_ND = null;
 		
@@ -71,7 +71,7 @@ public class Flights {
 				continue;
 			
 			departing.add(new Flight((String)raw_departure.get(i).get("AirplaneModel"),
-					(int)raw_departure.get(i).get("Flightnumber"),
+					(String)raw_departure.get(i).get("Flightnumber"),
 					(String)dep.get(0),
 					(String)dep.get(1),
 					(String)avl.get(0),
@@ -102,7 +102,7 @@ public class Flights {
 			
 
 			departing.add(new Flight((String)raw_departure_ND.get(i).get("AirplaneModel"),
-					(int)raw_departure_ND.get(i).get("Flightnumber"),
+					(String)raw_departure_ND.get(i).get("Flightnumber"),
 					(String)dep.get(0),
 					(String)dep.get(1),
 					(String)avl.get(0),

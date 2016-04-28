@@ -14,7 +14,7 @@ public class Flight {
 	static Map singleFlight;
 	
 	public String Airplane_Model;
-	public int Flightnumber;
+	public String Flightnumber;
 	public String Departure_Airport;
 	public DateTime DepartureTime;
 	public String Arrival_Airport;
@@ -48,7 +48,7 @@ public class Flight {
 		return singleFlight;
 	}
 	
-	public Flight(String Airplane_Model, int Flightnumber, String Departure_Airport, 
+	public Flight(String Airplane_Model, String Flightnumber, String Departure_Airport, 
 			String DepartureTime, String Arrival_Airport, String ArrivalTime, int Seats_FC, 
 			int Seats_EC, String Price_FC, String Price_EC)
 	{

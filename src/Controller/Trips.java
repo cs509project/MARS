@@ -9,7 +9,7 @@ import java.util.List;
 public class Trips {
 	private static List<Trip> trip = null;
 	private static boolean preferred_seating = true;
-	private static boolean retry = true;
+	private static boolean retry = false;
 	
 	/**
 	 * gets the number of trips returned by the last search
