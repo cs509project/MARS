@@ -118,7 +118,7 @@ public class ServerInterface {
 			url = new URL(res_system_url);
 			connection = (HttpURLConnection) url.openConnection();
 			connection.setRequestMethod("POST");
-			connection.setConnectTimeout(timeout);
+			//connection.setConnectTimeout(timeout);
 			
 			connection.setDoOutput(true);
 			//connection.setDoInput(true);
