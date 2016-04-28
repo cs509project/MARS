@@ -11,6 +11,7 @@ import Controller.Trip;
 import Controller.Trips;
 import Controller.ValidationController;
 import TripPlanner.TripPlanner;
+import Utility.Money;
 
 import java.awt.Component;
 import java.awt.EventQueue;
@@ -541,10 +542,12 @@ public class thirdwindow
 					long startTime = System.currentTimeMillis();
 					Object[] options =
 					{ "confirm", "cancel" };
+					Money m = new Money((((Trip) list.getSelectedValue()).GetPrice()+((Trip) list2.getSelectedValue()).GetPrice()));
 					int response = JOptionPane.showOptionDialog(null,
 							"Are you sure to book this trip?" + "\nOutbound:"
 									+ ((Trip) list.getSelectedValue()).confirmationString() + "Returning:"
-									+ ((Trip) list2.getSelectedValue()).confirmationString(),
+									+ ((Trip) list2.getSelectedValue()).confirmationString() + "Total Cost: "
+									+ m.toString(),
 							"confirmation", JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE, null, options,
 							options[0]);
 					// if confirm
