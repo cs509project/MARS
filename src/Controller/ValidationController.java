@@ -223,6 +223,7 @@ public class ValidationController {
 				{
 					xml = "";
 					System.out.println("Server returned " + response + ": " + GetCodeMessage(response));
+					this.ReportError(response);
 					return false;
 				}
 				
@@ -300,6 +301,7 @@ public class ValidationController {
 			{
 				xml = "";
 				System.out.println("Server returned " + response + ": " + GetCodeMessage(response));
+				this.ReportError(response);
 				return false;
 			}
 		}
@@ -408,6 +410,7 @@ public class ValidationController {
 		{
 			xml = "";
 			System.out.println("Server returned " + response + ": " + GetCodeMessage(response));
+			this.ReportError(response);
 			return new ArrayList<Map>();
 		}
 		
